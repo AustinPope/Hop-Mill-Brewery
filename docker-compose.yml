@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+        web:
+                build: .
+                environment:
+                        ROCKET_ENV: development
+                ports:
+                        - "8000:8000"
