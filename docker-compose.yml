@@ -1,9 +1,12 @@
 version: '3'
 
 services:
-        web:
-                build: .
-                environment:
-                        ROCKET_ENV: development
-                ports:
-                        - "8000:8000"
+  web:
+    build: .
+    volumes:
+      - cargo:/home/rust/.cargo
+    ports:
+      - 8000:8000
+
+volumes:
+  cargo: {}
