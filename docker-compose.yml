@@ -5,6 +5,7 @@ services:
     build: .
     volumes:
       - cargo:/home/rust/.cargo
+      - .:/hop-mill
     ports:
       - 8000:8000
 
