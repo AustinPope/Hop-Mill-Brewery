@@ -50,6 +50,12 @@
         </form>
     </div>
     <div class="right-side">
-        <div class="round-image"></div>
+        <div class="round-image">
+            {{ #if msg }}
+            <small class="field-{{msg.0}}-msg">
+                {{ msg.1 }}
+            </small>
+            {{ /if }}
+        </div>
     </div>
 </body>
