@@ -3,15 +3,32 @@
 #[macro_use]
 extern crate rocket;
 
-mod about;
+use rocket::Request;
+use rocket_contrib::{serve::StaticFiles, templates::Template};
 
-#[get("/")]
-fn index() -> &'static str {
-    "Hello, world!!!"
+mod about;
+mod api;
+mod contact;
+mod index;
+
+#[catch(404)]
+fn not_found(req: &Request) -> String {
+    format!("Oh no! We couldn't find the requested path '{}'", req.uri())
 }
 
 fn main() {
     rocket::ignite()
-        .mount("/", routes![index, about::about])
+        .register(catchers![not_found])
+        .mount(
+            "/",
+            routes![
+                about::about,
+                api::new_message,
+                contact::contact,
+                index::index
+            ],
+        )
+        // .mount("/contact", StaticFiles::from("/static"))
+        .attach(Template::fairing())
         .launch();
 }
