@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/base.css">
+</head>
+
+<body>
+    <div class="left-side">
+        <form action="/" method="post" accept-charset="utf-8">
+            <label>Subject:
+                <textarea name="subject" rows="5" cols="50" placeholder="Subject"></textarea>
+            </label>
+            <label>Message:
+                <textarea name="message" rows="10" cols="50" placeholder="Message"></textarea>
+            </label>
+            <label>Sumbit
+                <input type="submit" value="Submit">
+            </label>
+        </form>
+    </div>
+    <div class="right-side">
+        <div class="round-image" style="text-align: center; justify-content: center;">
+            {{ #if msg }}
+            <small class="field-{{msg.0}}-msg" style="display: inline-block;">
+                {{ msg.1 }}
+            </small>
+            {{ /if }}
+        </div>
+    </div>
+</body>
