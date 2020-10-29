@@ -19,6 +19,7 @@ fn not_found(req: &Request) -> String {
 fn main() {
     rocket::ignite()
         .register(catchers![not_found])
+        .mount("/static", StaticFiles::from("static/"))
         .mount(
             "/",
             routes![
@@ -28,7 +29,6 @@ fn main() {
                 index::index
             ],
         )
-        // .mount("/contact", StaticFiles::from("/static"))
         .attach(Template::fairing())
         .launch();
 }
