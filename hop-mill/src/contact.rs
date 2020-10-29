@@ -13,9 +13,6 @@ pub fn contact(msg: Option<FlashMessage>) -> Template {
             Context { msg: msg }
         }
     }
-    // let context = Context {
-    //     // give fields values
-    // };
     Template::render(
         "contact",
         &match msg {

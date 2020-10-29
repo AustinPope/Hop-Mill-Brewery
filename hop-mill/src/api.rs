@@ -3,9 +3,12 @@ use rocket::response::{Flash, Redirect};
 
 #[derive(FromForm, Debug)]
 pub struct Message {
-    // name: String,
-    // email_address: String,
-    // phone_number: String,
+    #[form(field = "name")]
+    name: String,
+    #[form(field = "email")]
+    email_address: String,
+    #[form(field = "phone")]
+    phone_number: String,
     #[form(field = "subject")]
     subject: String,
     #[form(field = "message")]
