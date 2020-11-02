@@ -5,9 +5,11 @@
   margin: 10px auto;
   padding: 16px;
   background: #f7f7f7;
+  position: relative;
+  top: 60px
 }
 .form-style h1 {
-  background: #43d1af;
+  background: rgb(60, 42, 71);
   padding: 20px 0;
   font-size: 140%;
   font-weight: 300;
@@ -51,9 +53,9 @@
 .form-style input[type="url"]:focus,
 .form-style textarea:focus,
 .form-style select:focus {
-  box-shadow: 0 0 5px #43d1af;
+  box-shadow: 0 0 5px rgb(60, 42, 71);
   padding: 3%;
-  border: 1px solid #43d1af;
+  border: 1px solid rgb(60, 42, 71);
 }
 
 .form-style input[type="submit"],
@@ -63,8 +65,8 @@
   -moz-box-sizing: border-box;
   width: 100%;
   padding: 3%;
-  background: #43d1af;
-  border-bottom: 2px solid #30c29e;
+  background: rgb(60, 42, 71);
+  border-bottom: 2px solid rgb(60, 42, 71);
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
@@ -72,5 +74,5 @@
 }
 .form-style input[type="submit"]:hover,
 .form-style input[type="button"]:hover {
-  background: #2ebc99;
+  background: rgb(40, 9, 58);
 }
