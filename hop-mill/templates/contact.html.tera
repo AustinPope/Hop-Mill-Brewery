@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" type="text/css" href="../static/css/base.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/contact_form.css">
-</head>
+{% extends "base" %}
 
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="../static/css/contact_form.css" >
+{% endblock head %}
+
+{% block title %} Contact {% endblock title %}
+
+{% block content %}
 <body>
     <div class="left-side">
         <div class="form-style">
@@ -21,12 +23,12 @@
     </div>
     <div class="right-side">
         <div class="round-image" style="text-align: center; justify-content: center;">
-            {% if msg %}
+        {% if msg %}
             <small class="field-{{msg.0}}-msg" style="display: inline-block;">
                 {{ msg.1 }}
             </small>
-            {% endif %}
+        {% endif %}
         </div>
     </div>
-</body>
+{% endblock content %}
 </html>

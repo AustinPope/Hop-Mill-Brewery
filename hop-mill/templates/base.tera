@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <title>{% block title %}{% endblock title %}</title>
+    {% endblock head %}
+	<link rel="stylesheet" href="../static/css/base.css" > 
+</head>
+<body style="background-color: rgb(175, 180, 197); font-size: 21px;">
+    <h1 class="title" style="text-align: center;"> Hop-Mill Brewery </h1>
+    <ul>
+        <li><a class ="activate" href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+
+    <div id="content">{% block content %}{% endblock content %}</div>
+
+</body>
+</html>
