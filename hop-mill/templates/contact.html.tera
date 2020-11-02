@@ -23,11 +23,11 @@
     </div>
     <div class="right-side">
         <div class="round-image" style="text-align: center; justify-content: center;">
-	    {% if msg %}
+            {% if msg %}
             <small class="field-{{msg.0}}-msg" style="display: inline-block;">
                 {{ msg.1 }}
             </small>
-	    {% endif %}
+            {% endif %}
         </div>
     </div>
 {% endblock content %}
