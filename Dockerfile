@@ -13,7 +13,7 @@ RUN cd /hop-mill/hop-mill
 # configs for using rocket.rs
 RUN rustup default nightly
 RUN rustup override set nightly
-RUN cargo install diesel_cli
+RUN cargo install diesel_cli --no-default-features --features postgres
 
 # update rust packages
 RUN rustup update && cargo update
