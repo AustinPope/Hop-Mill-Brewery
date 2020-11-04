@@ -8,6 +8,19 @@ services:
       - .:/hop-mill
     ports:
       - 8000:8000
+    links:
+      - db
+    command: bash -c "bash ./wait-for-it.sh db:5432 -q -- diesel setup"
+  db:
+    image: "postgres:9"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data/pgdata
+    environment:
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data/pgdata
 
 volumes:
   cargo: {}
+  pgdata: {}
