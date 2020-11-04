@@ -1,3 +1,4 @@
+extern crate diesel;
 use rocket::request::Form;
 use rocket::response::{Flash, Redirect};
 
