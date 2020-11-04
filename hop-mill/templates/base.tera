@@ -18,8 +18,11 @@
         <h1 class="page-title"> Hop-Mill Brewery </h1>
         <ul>
             <li><a class ="activate" href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="/beer">Beer</a></li>
+            <li><a href="/taproom">Taproom</a></li>
+            <li><a href="/tours">Tours</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
         </ul>
     
         <div id="content">

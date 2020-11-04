@@ -8,8 +8,11 @@ use rocket_contrib::{serve::StaticFiles, templates::Template};
 
 mod about;
 mod api;
+mod beer;
 mod contact;
 mod index;
+mod taproom;
+mod tours;
 
 #[catch(404)]
 fn not_found(req: &Request) -> String {
@@ -25,8 +28,11 @@ fn main() {
             routes![
                 about::about,
                 api::new_message,
+                beer::beer,
                 contact::contact,
-                index::index
+                index::index,
+                taproom::taproom,
+                tours::tours,
             ],
         )
         .attach(Template::fairing())
