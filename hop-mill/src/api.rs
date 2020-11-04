@@ -16,7 +16,7 @@ pub struct Message {
     message: String,
 }
 
-#[post("/", data = "<message_form>")]
+#[post("/contact/form", data = "<message_form>")]
 pub fn new_message(message_form: Form<Message>) -> Flash<Redirect> {
     // a forward or a failure can be caught by using the Option and Result
     let message: Message = message_form.into_inner();

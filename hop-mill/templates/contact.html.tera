@@ -11,7 +11,7 @@
     <div class="left-side">
         <div class="form-style">
             <h1>Contact Us</h1>
-            <form action="/" method="post" accept-charset="utf-8">
+            <form action="/contact/form" method="post" accept-charset="utf-8">
                 <input type="text" name="name" placeholder="Full Name" />
                 <input type="email" name="email" placeholder="Email Address" />
                 <input type="text" name="phone" placeholder="Phone" />
