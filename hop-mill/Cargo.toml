@@ -10,7 +10,8 @@ edition = "2018"
 tera = "1"
 rocket = "0.4.5"
 serde = { version = "1.0", features = ["derive"] }
-diesel =         { version = "*", default-features = false, features = ["sqlite"] }
+diesel = { version = "1.4.4", features = ["postgres"] }
+dotenv = "0.15.0"
 
 [dependencies.rocket_contrib]
 version = "0.4.5"
