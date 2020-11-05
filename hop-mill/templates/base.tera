@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html class = "no-js" lang="en">
 <head>
-    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="author" content="Austin Pope, Eric Kiesow">
+    {% block head %}{% endblock head %}
     <title>
         {% block title %}{% endblock title %}
     </title>
-    {% endblock head %}
-	
-    <link rel="stylesheet" href="../static/css/base.css" > 
+
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/base.css" >
     {% block css %}{% endblock css %}
 </head>
-<body style="background-color: rgb(175, 180, 197); font-size: 21px;">
-    <h1 class="title" style="text-align: center;"> Hop-Mill Brewery </h1>
-    <ul>
-        <li><a class ="activate" href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-    </ul>
-
-    <div id="content">
-        {% block content %}{% endblock content %}
-    </div>
-
-    <!-- Compressed JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    {% block scripts %}{% endblock scripts %}
-
-</body>
+<div class="main-container">
+    <body>
+        <h1 class="page-title"> Hop-Mill Brewery </h1>
+        <ul>
+            <li><a class ="activate" href="/">Home</a></li>
+            <li><a href="/beer">Beer</a></li>
+            <li><a href="/taproom">Taproom</a></li>
+            <li><a href="/tours">Tours</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    
+        <div id="content">
+            {% block content %}{% endblock content %}
+        </div>
+    
+        <!-- Compressed JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+        {% block scripts %}{% endblock scripts %}
+    
+    </body>
+    <footer>
+        <div class="footer-utility">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="footer-row-left">
+                        &copy; Hop Mill Brewing Company
+                    </div>
+                    <div class="footer-row-right">
+                        <address>
+                        3966 S Main St
+                        Hope Mills, NC 28348
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
 </html>
