@@ -1,33 +1,37 @@
 {% extends "base" %}
 
-{% block head %}
+{% block css %}
     <link rel="stylesheet" type="text/css" href="../static/css/contact_form.css" >
-{% endblock head %}
+{% endblock css %}
 
 {% block title %} Contact {% endblock title %}
 
 {% block content %}
 <body>
-    <div class="left-side">
-        <div class="form-style">
-            <h1>Contact Us</h1>
-            <form action="/contact/form" method="post" accept-charset="utf-8">
-                <input type="text" name="name" placeholder="Full Name" />
-                <input type="email" name="email" placeholder="Email Address" />
-                <input type="text" name="phone" placeholder="Phone" />
-                <input type="text" name="subject" placeholder="Subject" />
-                <textarea name="message" placeholder="Type Your Message Here"></textarea>
-                <input type="submit" value="Send">
-            </form>
-        </div>
-    </div>
-    <div class="right-side">
-        <div class="round-image" style="text-align: center; justify-content: center;">
-            {% if msg %}
-            <small class="field-{{msg.0}}-msg" style="display: inline-block;">
-                {{ msg.1 }}
-            </small>
-            {% endif %}
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="large-12 medium-12 cell">
+                <div class="form-style">
+                    <h1>Contact Us</h1>
+                    <form action="/contact/form" method="post" accept-charset="utf-8">
+                        <input type="text" name="name" placeholder="Full Name" />
+                        <input type="email" name="email" placeholder="Email Address" />
+                        <input type="text" name="phone" placeholder="Phone" />
+                        <input type="text" name="subject" placeholder="Subject" />
+                        <textarea name="message" placeholder="Type Your Message Here"></textarea>
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+            <div class="large-12 medium-12 cell">
+                <div style="text-align: center; justify-content: center;">
+                    {% if msg %}
+                    <small class="field-{{msg.0}}-msg" style="display: inline-block;">
+                        {{ msg.1 }}
+                    </small>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 {% endblock content %}

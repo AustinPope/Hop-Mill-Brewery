@@ -1,3 +1,19 @@
+.main-container {
+  min-height: 100vh;
+  display: block;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+body {
+  background-color: rgb(175, 180, 197);
+  font-size: 21px;
+}
+
+.page-title {
+  text-align: center;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -27,4 +43,49 @@ li a:hover {
 
 .active {
   background-color: #4caf50;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-utility {
+  background: #343a40;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 14px;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.footer-row-left {
+  margin-right: auto !important;
+  order: 1;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+  position: relative;
+}
+
+.footer-row-right {
+  order: 2;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+  position: relative;
 }
