@@ -13,6 +13,7 @@ RUN cd /hop-mill/hop-mill
 # configs for using rocket.rs
 RUN rustup default nightly
 RUN rustup override set nightly
+RUN cargo install cargo-watch
 
 # update rust packages
 RUN rustup update && cargo update
