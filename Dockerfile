@@ -15,6 +15,10 @@ RUN rustup default nightly
 RUN rustup override set nightly
 RUN cargo install diesel_cli
 
+# install wasm-pack
+RUN curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
+RUN cargo install cargo-generate
+
 # update rust packages
 RUN rustup update && cargo update
 
