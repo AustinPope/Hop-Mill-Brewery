@@ -17,12 +17,12 @@
     <body>
         <h1 class="page-title"> Hop-Mill Brewery </h1>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/beer">Beer</a></li>
-            <li><a href="/taproom">Taproom</a></li>
-            <li><a href="/tours">Tours</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a class="link" href="/">Home</a></li>
+            <li><a class="link" href="/beer">Beer</a></li>
+            <li><a class="link" href="/taproom">Taproom</a></li>
+            <li><a class="link" href="/tours">Tours</a></li>
+            <li><a class="link" href="/contact">Contact</a></li>
+            <li><a class="link" href="/about">About</a></li>
         </ul>
     
         <div id="content">
