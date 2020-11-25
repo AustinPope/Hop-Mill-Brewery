@@ -97,3 +97,7 @@ footer {
 .link:visited {
   color: white
 }
+
+.link:active {
+  color: rgb(117, 136, 199)
+}
