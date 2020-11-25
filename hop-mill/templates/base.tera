@@ -17,7 +17,7 @@
     <body>
         <h1 class="page-title"> Hop-Mill Brewery </h1>
         <ul>
-            <li><a class ="activate" href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/beer">Beer</a></li>
             <li><a href="/taproom">Taproom</a></li>
             <li><a href="/tours">Tours</a></li>
@@ -43,8 +43,8 @@
                     </div>
                     <div class="footer-row-right">
                         <address>
-                        3966 S Main St
-                        Hope Mills, NC 28348
+                        <a class="link" href="">3966 S Main St
+                        Hope Mills, NC 28348</a>
                         </address>
                     </div>
                 </div>
