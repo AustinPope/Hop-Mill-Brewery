@@ -41,10 +41,6 @@ a {
   color: white
 }
 
-.link:hover {
-  color: rgb(117, 136, 199)
-}
-
 li a:hover {
   background-color: rgb(40, 9, 58);
 }
@@ -92,4 +88,12 @@ footer {
   width: auto;
   max-width: 100%;
   position: relative;
+}
+
+.link:hover {
+  color: rgb(117, 136, 199)
+}
+
+.link:visited {
+  color: white
 }
