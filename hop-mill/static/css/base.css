@@ -37,12 +37,16 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: rgb(40, 9, 58);
+a {
+  color: white
 }
 
-.active {
-  background-color: #4caf50;
+.link:hover {
+  color: rgb(175, 180, 197)
+}
+
+li a:hover {
+  background-color: rgb(40, 9, 58);
 }
 
 footer {
