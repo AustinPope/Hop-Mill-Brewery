@@ -3,7 +3,10 @@ extern crate serde_json;
 use serde::{Serialize};
 use rocket::request::Form;
 use rocket::response::{Flash, Redirect};
-use firestore_db_and_auth::{Credentials, ServiceSession, documents, sessions};
+use serde_json::json;
+use firestore_db_and_auth::{Credentials, ServiceSession, documents};
+//extern crate firebase;
+//use firebase::Firebase;
 
 #[derive(FromForm, Debug, Serialize)]
 pub struct Message {
@@ -17,6 +20,12 @@ pub struct Message {
     subject: String,
     #[form(field = "message")]
     message: String,
+}
+
+#[derive(Debug, Serialize)]
+struct Test {
+    first: String,
+    last: String,
 }
 
 #[post("/contact/form", data = "<message_form>")]
@@ -34,13 +43,17 @@ pub fn new_message(message_form: Form<Message>) -> Flash<Redirect> {
     } else if message.message.is_empty() {
         return Flash::error(Redirect::to("/contact"), "Message cannot be empty.");
     }
-    let serialized = serde_json::to_string(&message).unwrap();
+    //let serialized = serde_json::to_string(&message).unwrap();
+    //let serialized_json = json!(serialized);
+    //let serialized_json = serialized_json.to_string();
     let cred = Credentials::from_file("Hop-Mill-250e45068a78.json").expect("Read credentials file");
     let session = ServiceSession::new(cred).expect("Create a service account session");
-    let _result = documents::write(&session, "messages", Some("mVIXrAqIC7a6pWNinzj8"),
-     &serialized, documents::WriteOptions::default());
+    let test = Test{first : "Austinn".to_string(), last : "Popee".to_string()};
+    let result = documents::write(&session, "messages", Some("mVIXrAqIC7a6pWNinzj8"), &test, documents::WriteOptions::default());
+    //let _result = documents::write(&session, "messages", Some("mVIXrAqIC7a6pWNinzj8"), &serialized_json, documents::WriteOptions::default());
     Flash::success(
         Redirect::to("/contact"),
-        format!("Message successfully serialized {}", serialized)
+        //format!("id: {}, created: {}, updated, {}", result.document_id, result.created, result.update_time.unwrap())
+        format!("This is the message: {:?}", test)
     )
 }
