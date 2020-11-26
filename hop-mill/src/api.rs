@@ -3,10 +3,7 @@ extern crate serde_json;
 use serde::{Serialize};
 use rocket::request::Form;
 use rocket::response::{Flash, Redirect};
-use serde_json::json;
 use firestore_db_and_auth::{Credentials, ServiceSession, documents};
-//extern crate firebase;
-//use firebase::Firebase;
 
 #[derive(FromForm, Debug, Serialize)]
 pub struct Message {
@@ -48,12 +45,11 @@ pub fn new_message(message_form: Form<Message>) -> Flash<Redirect> {
     //let serialized_json = serialized_json.to_string();
     let cred = Credentials::from_file("Hop-Mill-250e45068a78.json").expect("Read credentials file");
     let session = ServiceSession::new(cred).expect("Create a service account session");
-    let test = Test{first : "Austinn".to_string(), last : "Popee".to_string()};
-    let result = documents::write(&session, "messages", Some("mVIXrAqIC7a6pWNinzj8"), &test, documents::WriteOptions::default());
-    //let _result = documents::write(&session, "messages", Some("mVIXrAqIC7a6pWNinzj8"), &serialized_json, documents::WriteOptions::default());
+    //let test = Test{first : "Austinn".to_string(), last : "Popee".to_string()};
+    //let result = documents::write(&session, "messages", Some("mVIXrAqIC7a6pWNinzj8"), &test, documents::WriteOptions::default());
+    let _result = documents::write(&session, "messages", Some("mVIXrAqIC7a6pWNinzj8"), &message, documents::WriteOptions::default());
     Flash::success(
         Redirect::to("/contact"),
-        //format!("id: {}, created: {}, updated, {}", result.document_id, result.created, result.update_time.unwrap())
-        format!("This is the message: {:?}", test)
+        format!("This is the message: {:?}", message)
     )
 }
