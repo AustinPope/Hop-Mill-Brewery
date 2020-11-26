@@ -19,12 +19,6 @@ pub struct Message {
     message: String,
 }
 
-#[derive(Debug, Serialize)]
-struct Test {
-    first: String,
-    last: String,
-}
-
 #[post("/contact/form", data = "<message_form>")]
 pub fn new_message(message_form: Form<Message>) -> Flash<Redirect> {
     // a forward or a failure can be caught by using the Option and Result
@@ -40,16 +34,11 @@ pub fn new_message(message_form: Form<Message>) -> Flash<Redirect> {
     } else if message.message.is_empty() {
         return Flash::error(Redirect::to("/contact"), "Message cannot be empty.");
     }
-    //let serialized = serde_json::to_string(&message).unwrap();
-    //let serialized_json = json!(serialized);
-    //let serialized_json = serialized_json.to_string();
     let cred = Credentials::from_file("Hop-Mill-250e45068a78.json").expect("Read credentials file");
     let session = ServiceSession::new(cred).expect("Create a service account session");
-    //let test = Test{first : "Austinn".to_string(), last : "Popee".to_string()};
-    //let result = documents::write(&session, "messages", Some("mVIXrAqIC7a6pWNinzj8"), &test, documents::WriteOptions::default());
     let _result = documents::write(&session, "messages", Some("mVIXrAqIC7a6pWNinzj8"), &message, documents::WriteOptions::default());
     Flash::success(
         Redirect::to("/contact"),
-        format!("This is the message: {:?}", message)
+        format!("Thank you {} for your feedback!", message.name)
     )
 }
