@@ -1,10 +1,10 @@
 extern crate diesel;
-extern crate serde;
 extern crate serde_json;
+use serde::{Serialize};
 use rocket::request::Form;
 use rocket::response::{Flash, Redirect};
 
-#[derive(FromForm, Debug)]
+#[derive(FromForm, Debug, Serialize)]
 pub struct Message {
     #[form(field = "name")]
     name: String,
@@ -33,8 +33,9 @@ pub fn new_message(message_form: Form<Message>) -> Flash<Redirect> {
     } else if message.message.is_empty() {
         return Flash::error(Redirect::to("/contact"), "Message cannot be empty.");
     }
+    let serialized = serde_json::to_string(&message).unwrap();
     Flash::success(
         Redirect::to("/contact"),
-        "Successfully added message to Firebase"
+        format!("Message successfully serialized {}", serialized)
     )
 }
