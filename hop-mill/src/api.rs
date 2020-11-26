@@ -33,10 +33,8 @@ pub fn new_message(message_form: Form<Message>) -> Flash<Redirect> {
     } else if message.message.is_empty() {
         return Flash::error(Redirect::to("/contact"), "Message cannot be empty.");
     }
-    let mut dummy_db: Vec<Message> = Vec::new();
-    dummy_db.push(message);
     Flash::success(
         Redirect::to("/contact"),
-        format!("Message added successfully: {:?}", dummy_db),
+        "Successfully added message to Firebase"
     )
 }
