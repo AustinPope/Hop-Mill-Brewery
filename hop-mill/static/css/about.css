@@ -1,7 +1,7 @@
 .article {
     border-top: 1px solid #c0beb4;
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 1000px;
     padding: 50px 20px;
     box-sizing: border-box;
     display: block;
@@ -11,8 +11,9 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  text-align: center;
 }
 
-.text-center {
-    text-align: center;
+.image {
+  padding-bottom: 15px;
 }

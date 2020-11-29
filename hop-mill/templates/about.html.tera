@@ -8,17 +8,25 @@
 
 {% block content %}
     <div class="article">
-        <p>Our deep family history started generations ago . . .</p>
+        <div class="center">
+            <p class="text-center"><strong>Our deep family history started generations ago</strong></p>
+            <img class="image" src="../static/assets/logo.png" alt="Hop Mill Brewing logo" width="300" height="300" >
+        </div>
         <div class="center">
             <p class="text-center"><strong>We start with natrually grown hops</strong></p>
-            <img src="../static/assets/pexels-matthias-oben-5270727.jpg" alt="Hops" width="400" height="500" >
+            <img class="image" src="../static/assets/pexels-matthias-oben-5270727.jpg" alt="Hops" width="400" height="500" >
         </div>
         <p>Our hops are sourced in house in the hills of North Carolina. We never use genetically engineered ingredients. We use the best ingredients to chase the best taste possible.</p>
         <div class="center">
             <p class="text-center"><strong>Brewing our beers started small</strong></p>
-            <img src="../static/assets/pexels-pixabay-235725.jpg" alt="Hops" width="400" height="500" >
+            <img class="image" src="../static/assets/pexels-pixabay-235725.jpg" alt="Barn" width="400" height="500" >
         </div>
         <p>We take pride in maintaining the small brewery mentality. This is how we craft our excellent beers and make our employees feel like family. Hop Mill Brewing has been named top local places to work!</p>
+        <div class="center">
+            <p class="text-center"><strong>Why we do it</strong></p>
+            <img class="image" src="../static/assets/pexels-cottonbro-5530170.jpg" alt="Friends raising a glass" width="400" height="500" >
+        </div>
+        <p>We do it for you! We love good beer and we enjoy sharing our unique tastes even more.</p>
     </div>
 
 {% endblock content %}
