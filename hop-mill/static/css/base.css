@@ -49,12 +49,12 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: rgb(40, 9, 58);
+a {
+  color: white
 }
 
-.active {
-  background-color: #4caf50;
+li a:hover {
+  background-color: rgb(40, 9, 58);
 }
 
 footer {
@@ -100,4 +100,12 @@ footer {
   width: auto;
   max-width: 100%;
   position: relative;
+}
+
+.link:hover {
+  color: rgb(117, 136, 199)
+}
+
+.link:active {
+  color: rgb(117, 136, 199)
 }

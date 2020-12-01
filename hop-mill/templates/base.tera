@@ -24,12 +24,12 @@
         <h1 class="page-title"> Hop-Mill Brewery </h1>
         </div>
         <ul>
-            <li><a class ="activate" href="/">Home</a></li>
-            <li><a href="/beer">Beer</a></li>
-            <li><a href="/taproom">Taproom</a></li>
-            <li><a href="/tours">Tours</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a class="link" href="/">Home</a></li>
+            <li><a class="link" href="/beer">Beer</a></li>
+            <li><a class="link" href="/taproom">Taproom</a></li>
+            <li><a class="link" href="/tours">Tours</a></li>
+            <li><a class="link" href="/contact">Contact</a></li>
+            <li><a class="link" href="/about">About</a></li>
         </ul>
     
         <div id="content">
@@ -50,8 +50,10 @@
                     </div>
                     <div class="footer-row-right">
                         <address>
-                        3966 S Main St
-                        Hope Mills, NC 28348
+                        <a class="link" 
+                        href="https://www.google.com/maps/place/3966+S+Main+St,+Hope+Mills,+NC+28348/@34.9661412,-78.9470113,17z/data=!3m1!4b1!4m5!3m4!1s0x89ab16a4117784a3:0x29441c77a1e5ceb3!8m2!3d34.9661412!4d-78.9448226"
+                        target="_blank">
+                        3966 S Main St Hope Mills, NC 28348</a>
                         </address>
                     </div>
                 </div>

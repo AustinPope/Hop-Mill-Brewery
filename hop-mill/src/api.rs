@@ -1,7 +1,11 @@
+extern crate diesel;
+extern crate serde_json;
+use serde::{Serialize};
 use rocket::request::Form;
 use rocket::response::{Flash, Redirect};
+use firestore_db_and_auth::{Credentials, ServiceSession, documents};
 
-#[derive(FromForm, Debug)]
+#[derive(FromForm, Debug, Serialize)]
 pub struct Message {
     #[form(field = "name")]
     name: String,
@@ -30,10 +34,11 @@ pub fn new_message(message_form: Form<Message>) -> Flash<Redirect> {
     } else if message.message.is_empty() {
         return Flash::error(Redirect::to("/contact"), "Message cannot be empty.");
     }
-    let mut dummy_db: Vec<Message> = Vec::new();
-    dummy_db.push(message);
+    let cred = Credentials::from_file("Hop-Mill-250e45068a78.json").expect("Read credentials file");
+    let session = ServiceSession::new(cred).expect("Create a service account session");
+    let _result = documents::write(&session, "messages", Some("mVIXrAqIC7a6pWNinzj8"), &message, documents::WriteOptions::default());
     Flash::success(
         Redirect::to("/contact"),
-        format!("Message added successfully: {:?}", dummy_db),
+        format!("Thank you {} for your feedback!", message.name)
     )
 }
