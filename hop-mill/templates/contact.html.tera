@@ -4,6 +4,20 @@
     <link rel="stylesheet" type="text/css" href="../static/css/contact_form.css" >
 {% endblock css %}
 
+{% block head %}
+{# https://rustwasm.github.io/docs/wasm-bindgen/examples/without-a-bundler.html #}
+    <script type="module">
+        import init, { confirm } from '../static/js/wasm_demo.js';
+        async function run() {
+            await init();
+
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', confirm);
+        }
+        run();
+    </script>
+{% endblock head %}
+
 {% block title %} Contact {% endblock title %}
 
 {% block content %}
@@ -13,7 +27,7 @@
             <div class="large-12 medium-12 cell">
                 <div class="form-style">
                     <h1>Contact Us</h1>
-                    <form action="/contact/form" method="post" accept-charset="utf-8">
+                    <form id="contactForm" action="/contact/form" method="post" accept-charset="utf-8" >
                         <input type="text" name="name" placeholder="Full Name" />
                         <input type="email" name="email" placeholder="Email Address" />
                         <input type="text" name="phone" placeholder="Phone" />
@@ -36,3 +50,6 @@
     </div>
 {% endblock content %}
 </html>
+
+{% block scripts %}
+{% endblock scripts%}

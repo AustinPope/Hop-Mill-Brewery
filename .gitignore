@@ -1,6 +1,10 @@
+# Cargo/Rust
 debug/
 target/
-
 Cargo.lock
 
+# Firebase Credentials
 Hop-Mill-250e45068a78.json
+
+# VS Code
+.devcontainer/

@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Austin Pope, Eric Kiesow">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../static/assets/favicon_io/site.webmanifest">
     {% block head %}{% endblock head %}
     <title>
         {% block title %}{% endblock title %}
@@ -15,7 +19,10 @@
 </head>
 <div class="main-container">
     <body>
+        <div class="center">
+        <img class="logo" src="../static/assets/logo.png" alt="Hop Mill Brewing logo" width="100" height="100">
         <h1 class="page-title"> Hop-Mill Brewery </h1>
+        </div>
         <ul>
             <li><a class="link" href="/">Home</a></li>
             <li><a class="link" href="/beer">Beer</a></li>
