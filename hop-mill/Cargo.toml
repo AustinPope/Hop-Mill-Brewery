@@ -14,6 +14,7 @@ serde_json = "1.0"
 diesel = { version = "1.4.4", features = ["postgres"] }
 dotenv = "0.15.0"
 firestore-db-and-auth = "0.6.0"
+ws = "0.8.1"
 
 [dependencies.rocket_contrib]
 version = "0.4.5"

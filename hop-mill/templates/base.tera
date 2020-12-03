@@ -14,14 +14,14 @@
 
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/base.css" >
+    <link rel="stylesheet" href="../static/css/base.css">
     {% block css %}{% endblock css %}
 </head>
 <div class="main-container">
     <body>
         <div class="center">
-        <img class="logo" src="../static/assets/logo.png" alt="Hop Mill Brewing logo" width="100" height="100">
-        <h1 class="page-title"> Hop-Mill Brewery </h1>
+            <img class="logo" src="../static/assets/logo.png" alt="Hop Mill Brewing logo" width="100" height="100">
+            <h1 class="page-title"> Hop-Mill Brewery </h1>
         </div>
         <ul>
             <li><a class="link" href="/">Home</a></li>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="footer-row-right">
                         <address>
-                        <a class="link" 
+                        <a class="link"
                         href="https://www.google.com/maps/place/3966+S+Main+St,+Hope+Mills,+NC+28348/@34.9661412,-78.9470113,17z/data=!3m1!4b1!4m5!3m4!1s0x89ab16a4117784a3:0x29441c77a1e5ceb3!8m2!3d34.9661412!4d-78.9448226"
                         target="_blank">
                         3966 S Main St Hope Mills, NC 28348</a>
