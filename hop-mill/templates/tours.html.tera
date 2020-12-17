@@ -14,12 +14,6 @@
 {% block content %}
     <div>
         <h1 class="title">Schedule a Tour of our famous Brewery</h1>
-        <span
-          id="exit"
-          class="margin-right-one white cursor-pointer hover transition"
-        >
-        Exit
-      </span>
         <section>
             <ul id="messages">
             </ul>
@@ -38,6 +32,13 @@
                 >
                 Clear
                 </button>
+        <button
+          id="exit"
+          type="button"
+          class="margin-left-one red-white cursor-pointer hover"
+        >
+        Exit Chat
+      </span>
             </form>
         </section>
     </div>

@@ -2,7 +2,7 @@
 const emoji = require("node-emoji");
 const hasEmoji = require("has-emoji");
 
-const socket = new WebSocket("ws://127.0.0.1:7777/ws");
+const socket = new WebSocket("ws://0.0.0.0:7777/ws");
 
 function getDateTime() {
   const now = new Date();

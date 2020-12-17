@@ -89,8 +89,8 @@ impl Handler for Server {
 }
 
 pub fn websocket() -> () {
-    println!("Web Socket Server is ready at ws://127.0.0.1:7777/ws");
-    println!("Server is ready at http://127.0.0.1:7777/");
+    println!("Web Socket Server is ready at ws://0.0.0.0:7777/ws");
+    println!("Server is ready at http://0.0.0.0:7777/");
 
     // Rc is a reference-counted box for sharing the count between handlers
     // each handler needs its own contents.
@@ -99,7 +99,7 @@ pub fn websocket() -> () {
 
     // Listen on an address and call the closure for each connection
     let count = Rc::new(Cell::new(0));
-    listen("127.0.0.1:7777", |out| Server {
+    listen("0.0.0.0:7777", |out| Server {
         out: out,
         count: count.clone(),
     })
